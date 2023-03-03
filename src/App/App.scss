@@ -1,0 +1,34 @@
+.App {
+  background-color: var(--bg-primary-color);
+  height: 800px;
+  width: 600px;
+  padding: 20px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary-color);
+    height: 90px;
+    border: 5px solid var(--border-primary-color);
+    margin-bottom: 20px;
+    padding: 0 20px;
+    .smile {
+      height: 65px;
+      width: 65px;
+      font-size: 50px;
+      border: 5px solid var(--border-primary-color);
+      background-color: var(--bg-secondary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+  .body {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    border: 5px solid var(--border-primary-color);
+    height: 650px;
+  }
+}

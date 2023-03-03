@@ -1,0 +1,10 @@
+.display {
+  height: 60px;
+  width: 120px;
+  background-color: var(--bg-timer-color);
+  color: var(--timer-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+}
