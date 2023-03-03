@@ -10,8 +10,8 @@ import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [cells, setCells] = useState(gameField());
-
   console.log(cells);
+
   return (
     <div className="App">
       <div className="header">

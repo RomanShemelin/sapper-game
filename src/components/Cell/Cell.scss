@@ -1,0 +1,36 @@
+.Cell {
+  height: 35px;
+  width: 35px;
+  border: 3px solid var(--border-primary-color);
+  background-color: var(--bg-secondary-color);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+  &:active {
+    border: var(--border-secondary-color);
+  }
+  .score-1 {
+    color: blue;
+  }
+  .score-2 {
+    color: green;
+  }
+  .score-3 {
+    color: red;
+  }
+  .score-4 {
+    color: darkblue;
+  }
+  .score-5 {
+    color: brown;
+  }
+  .score-6 {
+    color: aqua;
+  }
+  .score-7 {
+    color: black;
+  }
+  .score-8 {
+    color: grey;
+  }
+}
