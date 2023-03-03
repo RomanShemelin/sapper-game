@@ -1,7 +1,7 @@
 .App {
   background-color: var(--bg-primary-color);
-  height: 800px;
-  width: 600px;
+  height: 750px;
+  width: 610px;
   padding: 20px;
   .header {
     display: flex;
@@ -10,7 +10,7 @@
     background-color: var(--bg-secondary-color);
     height: 90px;
     border: 5px solid var(--border-primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 0 20px;
     .smile {
       height: 65px;
@@ -29,6 +29,6 @@
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     border: 5px solid var(--border-primary-color);
-    height: 650px;
+    height: 590px;
   }
 }
