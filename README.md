@@ -1,4 +1,4 @@
-# Simpe game SAPPER
+# Simple game SAPPER
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
