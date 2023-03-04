@@ -14,7 +14,7 @@ export enum CellValue {
   six,
   seven,
   eight,
-  bomb,
+  mine,
 }
 export type Cell = {
   value: number;
@@ -28,7 +28,7 @@ export const gameField = (): Cell[][] => {
   for (let i = 0; i < rowsLength; i++) {
     cells.push([]);
     for (let j = 0; j < collumsLength; j++) {
-      cells[i].push({ value: CellValue.none, status: CellStatus.visible });
+      cells[i].push({ value: CellValue.none, status: CellStatus.open });
     }
   }
 
@@ -37,11 +37,11 @@ export const gameField = (): Cell[][] => {
     let randomRow = Math.floor(Math.random() * rowsLength);
     let randomCol = Math.floor(Math.random() * collumsLength);
     const cell = cells[randomRow][randomCol];
-    if (cell.value !== CellValue.bomb) {
+    if (cell.value !== CellValue.mine) {
       cells = cells.map((row, indexRow) =>
         row.map((cell, indexCol) => {
           if (indexRow === randomRow && indexCol === randomCol) {
-            return { ...cell, value: CellValue.bomb };
+            return { ...cell, value: CellValue.mine };
           }
           return cell;
         })
@@ -53,7 +53,7 @@ export const gameField = (): Cell[][] => {
   for (let i = 0; i < rowsLength; i++) {
     for (let j = 0; j < collumsLength; j++) {
       const current = cells[i][j];
-      if (current.value === CellValue.bomb) continue;
+      if (current.value === CellValue.mine) continue;
       let countBomb = 0;
       // проверка ячеек вокруг текущей
       const topLeftPosition = i > 0 && j > 0 ? cells[i - 1][j - 1] : null;
@@ -70,14 +70,14 @@ export const gameField = (): Cell[][] => {
           ? cells[i + 1][j + 1]
           : null;
 
-      if (topLeftPosition?.value === CellValue.bomb) countBomb++;
-      if (topCenterPosition?.value === CellValue.bomb) countBomb++;
-      if (topRightPosition?.value === CellValue.bomb) countBomb++;
-      if (rightPosition?.value === CellValue.bomb) countBomb++;
-      if (leftPosition?.value === CellValue.bomb) countBomb++;
-      if (bottomLeftPosition?.value === CellValue.bomb) countBomb++;
-      if (bottomCentralPosition?.value === CellValue.bomb) countBomb++;
-      if (bottomRightPosition?.value === CellValue.bomb) countBomb++;
+      if (topLeftPosition?.value === CellValue.mine) countBomb++;
+      if (topCenterPosition?.value === CellValue.mine) countBomb++;
+      if (topRightPosition?.value === CellValue.mine) countBomb++;
+      if (rightPosition?.value === CellValue.mine) countBomb++;
+      if (leftPosition?.value === CellValue.mine) countBomb++;
+      if (bottomLeftPosition?.value === CellValue.mine) countBomb++;
+      if (bottomCentralPosition?.value === CellValue.mine) countBomb++;
+      if (bottomRightPosition?.value === CellValue.mine) countBomb++;
 
       // меняем ячейку на количество бомб вокруг
       if (countBomb > 0) {
