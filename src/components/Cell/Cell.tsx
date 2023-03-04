@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 
 import { CellStatus, CellValue } from "@utils/gameField";
+import cn from "classnames";
 
 import "./Cell.scss";
 
@@ -33,13 +34,21 @@ export default function Cell({
 
   const onHandleMouseUp = (e: React.MouseEvent) => {
     if (e.button === 0) {
+      if (
+        status === CellStatus.flaged ||
+        status === CellStatus.question ||
+        status === CellStatus.visible
+      ) {
+        setEmoji(`😃`);
+        return;
+      }
       onClick(row, col);
       setEmoji(`😃`);
     }
   };
   return (
     <button
-      className={"Cell"}
+      className={cn("Cell", { visible: status === CellStatus.visible })}
       onMouseDown={onHandleMouseDown}
       onMouseUp={onHandleMouseUp}
     >

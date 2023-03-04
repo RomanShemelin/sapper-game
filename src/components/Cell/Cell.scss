@@ -6,8 +6,11 @@
   cursor: pointer;
   font-weight: bold;
   font-size: larger;
-  &:active {
-    border: var(--border-secondary-color);
+  border-top-color: var(--border-secondary-color);
+  border-left-color: var(--border-secondary-color);
+  font-size: 25px;
+  &.visible {
+    border: solid 2px var(--border-primary-color);
   }
   .score-1 {
     color: blue;
